@@ -48,10 +48,10 @@ export enable_progress_indicator=1;
 }
 
 
-menuentry $"启动porteus 网启服务器[未完善功能]" --class slackware {
+menuentry $"启动porteus 网启服务器[适合双机对拷]" --class slackware {
 echo wait........;
 export enable_progress_indicator=1;
- linux ($linux)/linux/vmlinuz pxe kernel_parameters=debug gpu_driver=$gpu_driver
+ linux ($linux)/linux/vmlinuz guiexec=netcopy pxe kernel_parameters=debug gpu_driver=$gpu_driver
  initrd ($linux)/linux/initrd.xz;
 }
 
