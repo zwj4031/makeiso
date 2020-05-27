@@ -24,10 +24,17 @@ export gpu_driver=fbdev; configfile $prefix/netboot.sh
 }
 
 
-menuentry $"启动netcopy 网络同传接收端" --class slackware {
+menuentry $"启动netcopy 网络同传接收端[新版]" --class slackware {
 echo wait........;
 export enable_progress_indicator=1;
  linux ($linux)/linux/vmlinuz netcopymode=1 guiexec=netcopy kernel_parameters=debug gpu_driver=$gpu_driver
+ initrd ($linux)/linux/initrd.xz;
+}
+
+menuentry $"启动netcopy 网络同传接收端[旧版]" --class slackware {
+echo wait........;
+export enable_progress_indicator=1;
+ linux ($linux)/linux/vmlinuz netcopymode=1 netcopyold=1 guiexec=netcopy kernel_parameters=debug gpu_driver=$gpu_driver
  initrd ($linux)/linux/initrd.xz;
 }
 
@@ -40,15 +47,28 @@ export enable_progress_indicator=1;
 }
 
 
-menuentry $"启动netcopy 网络同传发送端" --class slackware {
+menuentry $"启动netcopy 网络同传发送端[新版]" --class slackware {
 echo wait........;
 export enable_progress_indicator=1;
  linux ($linux)/linux/vmlinuz guiexec=netcopy kernel_parameters=debug gpu_driver=$gpu_driver
  initrd ($linux)/linux/initrd.xz;
 }
 
+menuentry $"启动netcopy 网络同传发送端[旧版]" --class slackware {
+echo wait........;
+export enable_progress_indicator=1;
+ linux ($linux)/linux/vmlinuz guiexec=netcopy netcopyold=1 kernel_parameters=debug gpu_driver=$gpu_driver
+ initrd ($linux)/linux/initrd.xz;
+}
 
-menuentry $"启动porteus 网启服务器[适合双机对拷]" --class slackware {
+menuentry $"启动porteus 网启服务器[dhcp]" --class slackware {
+echo wait........;
+export enable_progress_indicator=1;
+ linux ($linux)/linux/vmlinuz myip=169.254.1.1 guiexec=netcopy pxe kernel_parameters=debug gpu_driver=$gpu_driver
+ initrd ($linux)/linux/initrd.xz;
+}
+
+menuentry $"启动porteus 网启服务器[proxydhcp]" --class slackware {
 echo wait........;
 export enable_progress_indicator=1;
  linux ($linux)/linux/vmlinuz guiexec=netcopy pxe kernel_parameters=debug gpu_driver=$gpu_driver
