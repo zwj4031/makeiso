@@ -79,11 +79,11 @@ export theme_info=${prefix}/themes/slack/info.txt;
 export theme=${theme_std};
 
 search --set=user -f -q /boot/grubfm/config;
-if [ -n "${user}" ];
-then
-  grubfm_set -u "${user}";
-  source (${user})/boot/grubfm/config;
-fi;
-search -n -f /linux/t.sh -n -s linux;
+#if [ -n "${user}" ];
+#then
+#  grubfm_set -u "${user}";
+#  source (${user})/boot/grubfm/config;
+#fi;
+search -n -f /linux/vmlinuz -n -s linux;
 export gpu_driver=default;
   configfile ${prefix}/netboot.sh;
