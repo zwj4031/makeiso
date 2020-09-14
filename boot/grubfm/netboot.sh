@@ -24,12 +24,7 @@ export gpu_driver=fbdev; configfile $prefix/netboot.sh
 }
 
 
-menuentry $"启动netcopy 网络同传接收端[新版]" --class slackware {
-echo wait........;
-export enable_progress_indicator=1;
- linux ($linux)/linux/vmlinuz netcopymode=1 guiexec=netcopy kernel_parameters=debug gpu_driver=$gpu_driver
- initrd ($linux)/linux/initrd.xz;
-}
+
 
 menuentry $"启动netcopy 网络同传接收端[旧版]" --class slackware {
 echo wait........;
@@ -38,6 +33,12 @@ export enable_progress_indicator=1;
  initrd ($linux)/linux/initrd.xz;
 }
 
+menuentry $"启动netcopy 网络同传接收端[新版]" --class slackware {
+echo wait........;
+export enable_progress_indicator=1;
+ linux ($linux)/linux/vmlinuz netcopymode=1 guiexec=netcopy kernel_parameters=debug gpu_driver=$gpu_driver
+ initrd ($linux)/linux/initrd.xz;
+}
 
 menuentry $"启动传统ghost网络克隆客户端[会话名mousedos]" --class ghost {
 echo wait........;
@@ -47,33 +48,31 @@ export enable_progress_indicator=1;
 }
 
 
-menuentry $"启动netcopy 网络同传发送端[新版]" --class slackware {
+menuentry $"启动porteus 网启服务器[发送端][dhcp]" --class slackware {
 echo wait........;
 export enable_progress_indicator=1;
- linux ($linux)/linux/vmlinuz guiexec=netcopy kernel_parameters=debug gpu_driver=$gpu_driver
+ linux ($linux)/linux/vmlinuz myip=169.254.1.1 netcopyold=1 guiexec=netcopy pxe kernel_parameters=debug gpu_driver=$gpu_driver
  initrd ($linux)/linux/initrd.xz;
 }
 
-menuentry $"启动netcopy 网络同传发送端[旧版]" --class slackware {
+menuentry $"启动porteus 网启服务器[发送端][proxydhcp]" --class slackware {
 echo wait........;
 export enable_progress_indicator=1;
- linux ($linux)/linux/vmlinuz guiexec=netcopy netcopyold=1 kernel_parameters=debug gpu_driver=$gpu_driver
+ linux ($linux)/linux/vmlinuz guiexec=netcopy pxe netcopyold=1 kernel_parameters=debug gpu_driver=$gpu_driver
  initrd ($linux)/linux/initrd.xz;
 }
 
-menuentry $"启动porteus 网启服务器[dhcp]" --class slackware {
-echo wait........;
-export enable_progress_indicator=1;
- linux ($linux)/linux/vmlinuz myip=169.254.1.1 guiexec=netcopy pxe kernel_parameters=debug gpu_driver=$gpu_driver
- initrd ($linux)/linux/initrd.xz;
-}
+#menuentry $"启动porteus 旧内核[可输入中文]" --class slackware {
+#echo wait........;
+#export enable_progress_indicator=1;
+# mkinitrd -c a ($linux)/linux/initrd.xz;
+# mkinitrd -a a ($linux)/linux/init init;
+# mkinitrd -a a ($linux)/linux/old old;
+# linux ($linux)/linux/oldvmlinuz kernel_parameters=debug gpu_driver=$gpu_driver;
+# initrd (a)
+#}
 
-menuentry $"启动porteus 网启服务器[proxydhcp]" --class slackware {
-echo wait........;
-export enable_progress_indicator=1;
- linux ($linux)/linux/vmlinuz guiexec=netcopy pxe kernel_parameters=debug gpu_driver=$gpu_driver
- initrd ($linux)/linux/initrd.xz;
-}
+
 
 menuentry $"切换兼容性(启动失败请尝试)[当前:$gpu_driver]" --class screen {
  clear_menu; gpudriver;
