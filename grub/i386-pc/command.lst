@@ -47,15 +47,19 @@
 *kopenbsd: bsd
 *list_env: loadenv
 *load_env: loadenv
+*load_vt_param: ventoy
+*load_vt_persist: ventoy
 *loopback: loopback
 *ls: ls
 *lsacpi: lsacpi
 *lspci: lspci
 *lua: lua
+*map: map
 *md5sum: hashsum
 *menuentry: normal
 *mkinitrd: newc
 *nes: nes
+*ntboot: ntboot
 *ntversion: grubfm
 *partnew: partnew
 *pcidump: pcidump
@@ -99,6 +103,8 @@
 *verify_detached: pgp
 *vhd: vhd
 *videomode: videoinfo
+*wimboot: wimboot
+*wimtools: wimboot
 *xnu_splash: xnu
 *zfskey: zfscrypt
 .: configfile
@@ -217,7 +223,6 @@ pxechainloader: pxechain
 read: read
 read_file: read
 reboot: reboot
-regtool: libreg
 rename: fatfs
 reset: reboot
 return: normal

@@ -13,9 +13,9 @@
 *cryptomount: cryptodisk
 *date: date
 *dd: dd
-*disable_wpbt: acpi
 *dp: dp
 *echo: echo
+*efi_connect_all: efiload
 *efiload: efiload
 *expr: expr
 *extract_syslinux_entries_configfile: syslinuxcfg
@@ -41,6 +41,7 @@
 *hiddenentry: normal
 *html_list: grubfm
 *ini_get: ini
+*isotools: map
 *keystatus: keystatus
 *list_env: loadenv
 *load_env: loadenv
@@ -48,6 +49,7 @@
 *ls: ls
 *lsacpi: lsacpi
 *lua: lua
+*map: map
 *md5sum: hashsum
 *menuentry: normal
 *mkinitrd: newc
@@ -85,7 +87,10 @@
 *trust: pgp
 *uuid4: uuid
 *verify_detached: pgp
+*vhd: vhd
 *videomode: videoinfo
+*wimboot: wimboot
+*wimtools: wimboot
 *zfskey: zfscrypt
 .: configfile
 [: test
@@ -173,7 +178,6 @@ password_pbkdf2: password_pbkdf2
 read: read
 read_file: read
 reboot: reboot
-regtool: libreg
 rename: fatfs
 reset: reboot
 return: normal

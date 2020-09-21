@@ -7,7 +7,6 @@
 *btrfs-get-default-subvol: btrfs
 *btrfs-list-subvols: btrfs
 *cat: cat
-*cdboot: dp
 *chainloader: chain
 *clear_menu: normal
 *cpuid: cpuid
@@ -15,9 +14,9 @@
 *cryptomount: cryptodisk
 *date: date
 *dd: dd
-*disable_wpbt: acpi
 *dp: dp
 *echo: echo
+*efi_connect_all: efiload
 *efiload: efiload
 *expr: expr
 *extract_syslinux_entries_configfile: syslinuxcfg
@@ -47,12 +46,15 @@
 *ini_get: ini
 *inl: iorw
 *inw: iorw
+*isotools: map
 *keystatus: keystatus
 *kfreebsd: bsd
 *knetbsd: bsd
 *kopenbsd: bsd
 *list_env: loadenv
 *load_env: loadenv
+*load_vt_param: ventoy
+*load_vt_persist: ventoy
 *loopback: loopback
 *ls: ls
 *lsacpi: lsacpi
@@ -103,10 +105,10 @@
 *uuid4: uuid
 *ventoy: ventoy
 *verify_detached: pgp
-*vfat: wimboot
 *vhd: vhd
 *videomode: videoinfo
 *wimboot: wimboot
+*wimtools: wimboot
 *xnu_splash: xnu
 *zfskey: zfscrypt
 .: configfile
@@ -236,7 +238,6 @@ play: play
 read: read
 read_file: read
 reboot: reboot
-regtool: libreg
 rename: fatfs
 reset: reboot
 return: normal
