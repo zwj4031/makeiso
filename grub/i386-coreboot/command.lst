@@ -6,6 +6,7 @@
 *btrfs-list-subvols: btrfs
 *cat: cat
 *clear_menu: normal
+*cmp: cmp
 *cpuid: cpuid
 *crc: hashsum
 *cryptomount: cryptodisk
@@ -35,6 +36,7 @@
 *kopenbsd: bsd
 *list_env: loadenv
 *load_env: loadenv
+*loadfile: memrw
 *loopback: loopback
 *ls: ls
 *lsacpi: lsacpi
@@ -79,10 +81,10 @@
 *verify_detached: pgp
 *vhd: vhd
 *videomode: videoinfo
-*xnu_splash: xnu
 *zfskey: zfscrypt
 .: configfile
 [: test
+alias: alias
 authenticate: normal
 background_color: gfxterm_background
 backtrace: backtrace
@@ -100,7 +102,6 @@ cmosclean: cmostest
 cmosdump: cmosdump
 cmosset: cmostest
 cmostest: cmostest
-cmp: cmp
 commandline: commandline
 configfile: configfile
 continue: normal
@@ -111,9 +112,6 @@ cutmem: mmap
 decrement: increment
 distrust: pgp
 dump: minicmd
-efiemu_loadcore: efiemu
-efiemu_prepare: efiemu
-efiemu_unload: efiemu
 eval: eval
 exit: minicmd
 export: normal
@@ -151,6 +149,7 @@ mkdir: fatfs
 module2: multiboot2
 module: multiboot
 mount: fatfs
+mousectl: ps2mouse
 multiboot2: multiboot2
 multiboot: multiboot
 mv: fatfs
@@ -173,6 +172,8 @@ net_ls_routes: net
 net_nslookup: net
 normal: normal
 normal_exit: normal
+nthibr: nttools
+ntversion: nttools
 outb: iorw
 outl: iorw
 outw: iorw
@@ -205,6 +206,7 @@ time: time
 touch: fatfs
 true: true
 umount: fatfs
+unalias: alias
 usb: usbtest
 version: version
 videoinfo: videoinfo
@@ -215,14 +217,6 @@ write_dword: memrw
 write_file: fatfs
 write_word: memrw
 wrmsr: wrmsr
-xnu_devprop_load: xnu
-xnu_kernel64: xnu
-xnu_kernel: xnu
-xnu_kext: xnu
-xnu_kextdir: xnu
-xnu_mkext: xnu
-xnu_ramdisk: xnu
-xnu_resume: xnu
 xnu_uuid: xnu_uuid
 zfs-bootfs: zfsinfo
 zfsinfo: zfsinfo
