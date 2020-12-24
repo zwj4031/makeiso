@@ -1,4 +1,4 @@
-source $prefix/global.sh;
+
 
 function gpudriver {
 
@@ -90,3 +90,4 @@ $chain (http,boot.netboot.xyz)/ipxe/$netbootxyz
 menuentry $"本地" --class hdd {
  netboot; grubfm_set --boot 0; clear_menu; grubfm;
 }
+source $prefix/global.sh;
